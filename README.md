@@ -35,7 +35,7 @@ following the official instructions ([Tips for training NeRF models with Instant
 ## Tips on Capturing Your Own Dataset:
 - Use high resolution, fixed aperture/focal length, fixed exposure
 - Best camera movement is to aim inward at an object of interest and move around, try to capture all faces of the object, and make sure images overlap a lot
-- Move slowly, avoid motion blur
+- Move slowly, avoid motion blur, delete blurry images if needed
 - Authors suggest 50-150 final images
 
 Note: the reconstruction will only look decent on or near the angle you captured.
