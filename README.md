@@ -28,7 +28,7 @@ following the official instructions ([Tips for training NeRF models with Instant
 - Go the the master folder
   ```bash
   cd ../..
-  instant-ngp data/meeting_room
+  instant-ngp data/mill19_lab
   ```
 - It taks only minutes to train a photo-realistic 3D scene. Once the loss graph stop decreasing and just oscillate, you can stop the training.
 
