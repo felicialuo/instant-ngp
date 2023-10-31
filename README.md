@@ -1,3 +1,64 @@
+# Instant-NGP Windows Implementation 
+This is my implementation tested on Windows 10, with AMD® Ryzen 9 7900x & NVIDIA GeForce RTX 3090 Ti
+following the official instructions ([Tips for training NeRF models with Instant Neural Graphics Primitives](https://github.com/NVlabs/instant-ngp/blob/master/docs/nerf_dataset_tips.md#tips-for-training-nerf-models-with-instant-neural-graphics-primitives)).
+
+## Installation
+- Download the release corresponding to you GPU, in my case I used the one for [RTX 3000 & 4000 series](https://github.com/NVlabs/instant-ngp/releases/download/continuous/Instant-NGP-for-RTX-3000-and-4000.zip).
+- Then open Anaconda prompt:
+  ```bash
+  cd C:\Users\felicia\Documents\3d_recon\Instant-NGP-for-RTX-3000-and-4000
+  conda create --name ngp
+  conda activate ngp
+  ```
+
+## Data Preprocessing
+- Put captured video in `data\{name of the dataset}` folder
+- Get images (best between 50-150 images suggested by authors so determine fps accordingly), specify your video path:
+  ```bash
+  python scripts\colmap2nerf.py --video_in data\mill19_lab\mill19_lab.MOV --video_fps 2 --run_colmap --aabb_scale 16 --overwrite
+  ```
+- Optional, recommended in other implementation: Delete blurry images
+- Get transform.json: go to `data\{name of the dataset}` folder, modify the colmap2nerf.py to your file path
+  ```bash
+  cd data\mill19_lab
+  python C:\Users\felicia\Documents\3d_recon\Instant-NGP-for-RTX-3000-and-4000\scripts\colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16
+  ```
+
+## Run Instant-NGP
+- Go the the master folder
+  ```bash
+  cd ../..
+  instant-ngp data/meeting_room
+  ```
+- It taks only minutes to train a photo-realistic 3D scene. Once the loss graph stop decreasing and just oscillate, you can stop the training.
+
+## Tips on Capturing Your Own Dataset:
+- Use high resolution, fixed aperture/focal length, fixed exposure
+- Best camera movement is to aim inward at an object of interest and move around, try to capture all faces of the object, and make sure images overlap a lot
+- Move slowly, avoid motion blur
+- Authors suggest 50-150 final images
+
+Note: the reconstruction will only look decent on or near the angle you captured.
+
+## Results
+### meeting_room
+- Number of final training images: 638
+- Render result:<video src="meeting_room_render.mp4" controls title="Title"></video>
+
+### workshop
+- Number of final training images: 148
+- Render result:<video src="workshop_render.mp4" controls title="Title"></video>
+
+### living_room
+- Number of final training images: 121
+- Render result:<video src="living_room_render.mp4" controls title="Title"></video>
+
+### mill19_lab
+- Number of final training images: 199
+- Render result: <video src="mill19_lab_render.mp4" controls title="Title"></video>
+
+### --END of my implementation--
+
 # Instant Neural Graphics Primitives ![](https://github.com/NVlabs/instant-ngp/workflows/CI/badge.svg)
 
 <img src="docs/assets_readme/fox.gif" height="342"/> <img src="docs/assets_readme/robot5.gif" height="342"/>
