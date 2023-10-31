@@ -48,13 +48,11 @@ Note: the reconstruction will only look decent on or near the angle you captured
 https://github.com/felicialuo/instant-ngp/assets/129685045/f3485d3f-0048-4bdc-b200-a8b643de7318
 
 
-
 ### workshop
 - Number of final training images: 148
 - Render result: 
 
 https://github.com/felicialuo/instant-ngp/assets/129685045/c3e3414e-39f4-43b1-b44f-7575cb180139
-
 
 
 ### living_room
@@ -64,7 +62,6 @@ https://github.com/felicialuo/instant-ngp/assets/129685045/c3e3414e-39f4-43b1-b4
 https://github.com/felicialuo/instant-ngp/assets/129685045/ca22f49a-b074-4826-9a24-d67b3ce5e154
 
 
-
 ### mill19_lab
 - Number of final training images: 199
 - Render result: 
@@ -72,8 +69,9 @@ https://github.com/felicialuo/instant-ngp/assets/129685045/ca22f49a-b074-4826-9a
 https://github.com/felicialuo/instant-ngp/assets/129685045/aa915c9b-43bd-4949-b6a3-80005c1635ae
 
 
+**--END of my implementation--**
 
-### --END of my implementation--
+
 
 # Instant Neural Graphics Primitives ![](https://github.com/NVlabs/instant-ngp/workflows/CI/badge.svg)
 
