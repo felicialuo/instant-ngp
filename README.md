@@ -15,13 +15,15 @@ following the official instructions ([Tips for training NeRF models with Instant
 - Put captured video in `data\{name of the dataset}` folder
 - If training from video: Get images (best between 50-150 images suggested by authors so determine fps accordingly), specify your video path:
   ```bash
-  python scripts\colmap2nerf.py --video_in data\mill19_lab\mill19_lab.MOV --video_fps 2 --run_colmap --aabb_scale 16 --overwrite
+  cd data\mill19_lab
+  python ..\..\scripts\colmap2nerf.py --video_in mill19_lab.MOV --video_fps 2 --run_colmap --aabb_scale 16 --overwrite
   ```
 - Optional, recommended in other implementation: Delete blurry images
+  
 - If training from images: go to `data\{name of the dataset}` folder, modify the colmap2nerf.py to your file path
   ```bash
   cd data\mill19_lab
-  python C:\Users\felicia\Documents\3d_recon\Instant-NGP-for-RTX-3000-and-4000\scripts\colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16
+  python ..\..\scripts\colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16
   ```
 
 ## Run Instant-NGP
